@@ -43,7 +43,7 @@ user:
 spring:
   # 模板引擎
   thymeleaf:
-    mode: HTML
+    mode: LEGACYHTML5
     encoding: utf-8
     # 禁用缓存
     cache: false
@@ -76,7 +76,8 @@ mybatis:
 
 
 # PageHelper分页插件
-pagehelper: 
+pagehelper:
+#设置数据库方言
   helperDialect: mysql
   reasonable: true
   supportMethodsArguments: true

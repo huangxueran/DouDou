@@ -2,6 +2,8 @@ package com.aaa.framework.shiro.service;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.PostConstruct;
+
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.shiro.cache.Cache;
 import org.apache.shiro.cache.CacheManager;
 import org.apache.shiro.crypto.hash.Md5Hash;
@@ -69,6 +71,7 @@ public class PasswordService
 
     public boolean matches(User user, String newPassword)
     {
+        //判断数据库中的密码是否跟（登录的用户名密码，以及盐）通过encryptPassword加密之后的密文对比，如果一致说明用户名密码正确
         return user.getPassword().equals(encryptPassword(user.getLoginName(), newPassword, user.getSalt()));
     }
 
@@ -84,7 +87,8 @@ public class PasswordService
 
     public static void main(String[] args)
     {
-        System.out.println(new PasswordService().encryptPassword("admin", "admin123", "111111"));
-        System.out.println(new PasswordService().encryptPassword("ry", "admin123", "222222"));
+       /* System.out.println(new PasswordService().encryptPassword("admin", "admin123", "111111"));*/
+        String s = new PasswordService().encryptPassword("zhangsan", "123456", "6ac61b");
+        System.out.println(s);
     }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <meta charset="utf-8">
 <head th:include="include :: header"></head>
 <body class="gray-bg">
@@ -24,6 +25,9 @@
 			</div>
 			
 	        <div class="btn-group-sm hidden-xs" id="toolbar" role="group">
+				<a class="btn btn-success"  shiro:hasPermission="system:typeinfo:xxx">
+					<i class="fa fa-plus"></i> shiro测试
+				</a>
 				<a class="btn btn-success" onclick="$.operate.add()" shiro:hasPermission="system:typeinfo:add">
 					<i class="fa fa-plus"></i> 添加
 				</a>

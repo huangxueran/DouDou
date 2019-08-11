@@ -5,6 +5,7 @@ import java.util.List;
 import com.aaa.project.system.typeinfo.domain.Typeinfo;
 import com.aaa.project.system.typeinfo.service.ITypeinfoService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -55,7 +56,9 @@ public class GoodsinfoController extends BaseController
 	@ResponseBody
 	public TableDataInfo list(Goodsinfo goodsinfo)
 	{
+		//开始分页
 		startPage();
+		//此处不能写任何代码
         List<Goodsinfo> list = goodsinfoService.selectGoodsinfoList(goodsinfo);
 		return getDataTable(list);
 	}

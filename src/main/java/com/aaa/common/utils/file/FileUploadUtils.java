@@ -114,6 +114,7 @@ public class FileUploadUtils
         String fileName = encodingFilename(file.getOriginalFilename(), extension);
 
         File desc = getAbsoluteFile(baseDir, baseDir + fileName);
+        //文件拷贝
         file.transferTo(desc);
         return fileName;
     }

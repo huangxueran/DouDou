@@ -41,7 +41,7 @@ public class LogAspect
     }
 
     /**
-     * 前置通知 用于拦截操作
+     * 后置通知 用于拦截操作
      *
      * @param joinPoint 切点
      */

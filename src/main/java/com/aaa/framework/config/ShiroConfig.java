@@ -26,6 +26,7 @@ import com.aaa.framework.shiro.web.filter.sync.SyncOnlineSessionFilter;
 import com.aaa.framework.shiro.web.session.OnlineWebSessionManager;
 import com.aaa.framework.shiro.web.session.SpringSessionValidationScheduler;
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
+import org.springframework.context.annotation.PropertySources;
 
 /**
  * 权限配置加载
